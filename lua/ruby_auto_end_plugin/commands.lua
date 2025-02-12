@@ -20,3 +20,5 @@ function M.setup()
     end,
   })
 end
+
+return M
