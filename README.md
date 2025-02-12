@@ -17,9 +17,6 @@ Supports Vim's indentation settings (spaces or tabs).
 ```lua
 {
   "pvfm/ruby_auto_end.nvim",
-  config = function()
-    require("ruby_auto_end_plugin").setup()
-  end
 }
 ```
 
@@ -27,9 +24,6 @@ Supports Vim's indentation settings (spaces or tabs).
 ```lua
 use({
   "pvfm/ruby_auto_end.nvim",
-  config = function()
-    require("ruby_auto_end_plugin").setup()
-  end
 })
 ```
 
@@ -50,10 +44,20 @@ The plugin automatically works for Ruby files. When you type `def`, `class`, `mo
 def my_method
 ```
 
+```ruby
+class my_class
+```
+
 ### After pressing `<CR>`:
 
 ```ruby
 def my_method
+  # Cursor is here, ready to type
+end
+```
+
+```ruby
+class my_class
   # Cursor is here, ready to type
 end
 ```
