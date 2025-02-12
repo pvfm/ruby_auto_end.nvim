@@ -13,7 +13,7 @@ function M.setup()
         local any_match = match.has_match(current_line)
         if any_match then
           auto_end_command.add_end(current_line, current_row)
-          return ""
+          return vim.NIL
         end
 
         return "<CR>"
