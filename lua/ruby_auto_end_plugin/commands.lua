@@ -10,13 +10,12 @@ function M.setup()
       vim.keymap.set("i", "<CR>", function()
         local current_row, current_col = unpack(vim.api.nvim_win_get_cursor(0)) -- Get current cursor position
         local current_line = vim.api.nvim_get_current_line()
-        local any_match = match.has_match(current_line)
-        if any_match then
+        if match.has_match(current_line) then
           auto_end_command.add_end(current_line, current_row)
-          return vim.NIL
+          return ""
+        else
+          return "<CR>"
         end
-
-        return "<CR>"
       end, { expr = true, buffer = true })
     end,
   })
